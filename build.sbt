@@ -4,7 +4,7 @@ organization := "com.agilogy"
 
 name := "interval"
 
-version := "1.0.0-SNAPSHOT"
+version := "1.0.0"
 
 scalaVersion := "2.11.6"
 
