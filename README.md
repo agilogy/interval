@@ -1,9 +1,11 @@
-# SRDB: Scala Relational DataBase Api
+# Interval
 
 [![Build Status](https://travis-ci.org/agilogy/interval.svg?branch=master)](https://travis-ci.org/agilogy/interval)
 [![Coverage Status](https://coveralls.io/repos/agilogy/interval/badge.svg)](https://coveralls.io/r/agilogy/interval)
 
 This is a Work In Progress...
+
+A simple trait and case class representing interval of types in the ordering typeclass
 
 ## TO-DO
 - Documentation
