@@ -6,9 +6,11 @@ case class OpenBound[T](value: T) extends IntervalBound[T]
 
 case class ClosedBound[T](value: T) extends IntervalBound[T]
 
-case class Interval[T: Ordering](from: Option[IntervalBound[T]], to: Option[IntervalBound[T]]) {
+trait Interval[T] {
 
-  lazy val ordering = implicitly[Ordering[T]]
+  val from: Option[IntervalBound[T]]
+  val to: Option[IntervalBound[T]]
+  val ordering: Ordering[T]
 
   def includes(value: T): Boolean = {
     val notBeforeFrom = from match {
@@ -24,3 +26,8 @@ case class Interval[T: Ordering](from: Option[IntervalBound[T]], to: Option[Inte
     notBeforeFrom && notAfterTo
   }
 }
+
+case class GenericInterval[T: Ordering](from: Option[IntervalBound[T]], to: Option[IntervalBound[T]]) extends Interval[T] {
+  override val ordering: Ordering[T] = implicitly[Ordering[T]]
+}
+
